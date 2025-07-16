@@ -91,11 +91,11 @@ impl FrameSystem {
     }
 
     pub fn frame<F>(
-        &mut self,
+        &'_ mut self,
         before_future: F,
         final_image: Arc<ImageView>,
         world_to_framebuffer: Matrix4<f32>,
-    ) -> Frame
+    ) -> Frame<'_>
     where
         F: GpuFuture + 'static,
     {

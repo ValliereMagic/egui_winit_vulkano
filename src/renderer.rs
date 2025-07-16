@@ -946,7 +946,7 @@ impl Renderer {
         }
     }
 
-    pub fn render_resources(&self) -> RenderResources {
+    pub fn render_resources(&'_ self) -> RenderResources<'_> {
         RenderResources {
             queue: self.queue(),
             subpass: self.subpass.clone(),
